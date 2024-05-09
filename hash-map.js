@@ -30,12 +30,23 @@ class HashMap {
   }
 
   length() {
-    let size = Object.keys(this.map).length;
-    return size;
+    return Object.keys(this.map).length;
   }
 
   clear() {
     this.map = {};
+  }
+
+  keys() {
+    return Object.keys(this.map);
+  }
+
+  values() {
+    return Object.values(this.map);
+  }
+
+  entries() {
+    return Object.entries(this.map);
   }
 }
 
@@ -52,4 +63,6 @@ console.log(map.has("Peter"));
 console.log(map.has("Amora"));
 
 console.log(map.length());
-console.log(map);
+console.log(map.keys());
+console.log(map.values());
+console.log(map.entries());
