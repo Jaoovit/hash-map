@@ -33,6 +33,10 @@ class HashMap {
     let size = Object.keys(this.map).length;
     return size;
   }
+
+  clear() {
+    this.map = {};
+  }
 }
 
 const map = new HashMap();
