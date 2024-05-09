@@ -66,3 +66,29 @@ console.log(map.length());
 console.log(map.keys());
 console.log(map.values());
 console.log(map.entries());
+
+class HashSet {
+  constructor() {
+    this.map = {};
+  }
+
+  setHash(key) {
+    let setHashCode = 0;
+    const setPrimeNumber = 31;
+    for (let i = 0; i < key.length; i++) {
+      setHashCode = setPrimeNumber * setHashCode + key.charCodeAt(i);
+    }
+    return setHashCode;
+  }
+
+  setSet(key) {
+    const index = this.setHash(key);
+    this.map[index] = key;
+  }
+}
+
+const setMap = new HashSet();
+
+setMap.setSet("a");
+
+console.log(setMap);
