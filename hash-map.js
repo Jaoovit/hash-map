@@ -20,6 +20,14 @@ class HashMap {
     const index = this.hash(key);
     return this.map[index];
   }
+
+  has(key) {
+    const index = this.hash(key);
+    for (let i = 0; i < key.length; i++) {
+      if (this.map[index] == key) return true;
+    }
+    return false;
+  }
 }
 
 const map = new HashMap();
@@ -30,5 +38,8 @@ map.set("Miguel");
 map.set("Amora");
 
 console.log(map.get("John"));
+
+console.log(map.has("Peter"));
+console.log(map.has("Amora"));
 
 console.log(map);
