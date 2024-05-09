@@ -11,9 +11,9 @@ class HashMap {
     }
     return hashCode;
   }
-  set(key) {
+  set(key, value) {
     const index = this.hash(key);
-    this.map[index] = key;
+    this.map[index] = value;
   }
 
   get(key) {
@@ -28,18 +28,24 @@ class HashMap {
     }
     return false;
   }
+
+  length() {
+    let size = Object.keys(this.map).length;
+    return size;
+  }
 }
 
 const map = new HashMap();
 
-map.set("John");
-map.set("Jess");
-map.set("Miguel");
-map.set("Amora");
+map.set("John", "John");
+map.set("Jess", "Jess");
+map.set("Miguel", "Miguel");
+map.set("Amora", "Amora");
 
 console.log(map.get("John"));
 
 console.log(map.has("Peter"));
 console.log(map.has("Amora"));
 
+console.log(map.length());
 console.log(map);
